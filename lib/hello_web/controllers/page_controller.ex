@@ -10,7 +10,7 @@ defmodule HelloWeb.PageController do
   def api(conn, _params) do
     # * Returns a JSON response for API requests
     json(conn, %{
-      message: "Hello from Phoenix API!",
+      message: "Hello from Phoenix API on seenode!",
       status: "success",
       timestamp: DateTime.utc_now()
     })
