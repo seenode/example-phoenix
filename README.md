@@ -24,6 +24,11 @@ View our [guide on deploying Phoenix apps](https://seenode.com/docs/frameworks/e
 
 That's it! Your Phoenix app will be deployed and available at a public URL.
 
+### Environment Variables
+
+**Required for Production:**
+* `SECRET_KEY_BASE`: Generate this with `mix phx.gen.secret` in your project root. This is used to sign/encrypt cookies and other secrets.
+
 ### Key Features on Seenode
 
 * **Production-Ready**: Your Phoenix app runs in a managed Elixir environment with optimized performance and reliability.
