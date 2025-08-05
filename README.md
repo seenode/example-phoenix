@@ -11,8 +11,15 @@ View our [guide on deploying Phoenix apps](https://seenode.com/docs/frameworks/e
 
 1. **Connect Your Repository**: Go to the [Seenode dashboard](https://cloud.seenode.com), select **New Web Service**, and choose this Git repository.
 2. **Confirm Settings**: Seenode will detect the Elixir environment and suggest the correct commands.
-   * **Build Command**: `mix deps.get && mix compile`
-   * **Start Command**: `mix phx.server --port 80`
+   * **Build Command**: 
+     ```
+     mix local.hex --force && mix local.rebar --force
+     mix deps.get --only prod
+     MIX_ENV=prod mix compile
+     MIX_ENV=prod mix assets.build
+     MIX_ENV=prod mix assets.deploy
+     ```
+   * **Start Command**: `MIX_ENV=prod mix phx.server`
 3. **Deploy**: Click **Create Web Service**.
 
 That's it! Your Phoenix app will be deployed and available at a public URL.
@@ -20,7 +27,7 @@ That's it! Your Phoenix app will be deployed and available at a public URL.
 ### Key Features on Seenode
 
 * **Production-Ready**: Your Phoenix app runs in a managed Elixir environment with optimized performance and reliability.
-* **Port Binding**: This example is configured to listen on port 80. Ensure your application code binds to this port, or whatever port you set when deploying your application.
+* **Port Binding**: This example is configured to listen on port 80 by default in production. The app will automatically bind to port 80 unless overridden by the PORT environment variable.
 * **API Endpoint**: Includes a working `/api` endpoint that returns JSON responses for easy testing and integration.
 * **Seamless Scaling**: Scale your service horizontally or vertically with a few clicks from the Seenode dashboard as your traffic grows.
 * **Live Reload**: Development-friendly with automatic code reloading and asset compilation.
