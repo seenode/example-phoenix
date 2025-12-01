@@ -32,7 +32,7 @@ That's it! Your Phoenix app will be deployed and available at a public URL.
 ### Key Features on Seenode
 
 * **Production-Ready**: Your Phoenix app runs in a managed Elixir environment with optimized performance and reliability.
-* **Port Binding**: This example is configured to listen on port 80 by default in production.
+* **Port Binding**: This example is configured to listen on port 80. Set the Port field in the Seenode dashboard to `80` to match.
 * **API Endpoint**: Includes a working `/api` endpoint that returns JSON responses for easy testing and integration.
 * **Seamless Scaling**: Scale your service horizontally or vertically with a few clicks from the Seenode dashboard as your traffic grows.
 * **Live Reload**: Development-friendly with automatic code reloading and asset compilation.
